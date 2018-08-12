@@ -13,6 +13,11 @@ function main(){
 
 	    
 
+		
+        game.load.audio('backgroundMusic', 'audio/backgroundMusic.mp3');
+        game.load.audio('correct', 'audio/correct.wav');
+        game.load.audio('wrong', 'audio/wrong.wav');
+        game.load.audio('lose', 'audio/lose.wav');
 
 	}
 
@@ -51,10 +56,19 @@ function main(){
 
 	function create() {
 
+		music = game.add.audio('backgroundMusic');
+		music.loop = true; 
+	    music.play();
+
+		correctFX = game.add.audio('correct');
+		wrongFX = game.add.audio('wrong');
+		loseFX = game.add.audio('lose');
+
+
 	    // game.stage.backgroundColor = "666666";
 	    game.stage.backgroundColor = white;
 
-	    fire = game.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
+	    spacebar = game.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
 
 		board = spawnBoard();
 
@@ -69,13 +83,20 @@ function main(){
 	    text.setTextBounds(0, 0, 800, 100);
 
 
-
 	    var style2 = { font: "bold 40px Arial", fill: "#000", boundsAlignH: "right", boundsAlignV: "middle" };
 	    //  The Text is positioned at 0, 100
 	    level = game.add.text(0, 0, ""+randomNumber(1,700), style2);
 	    // text.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
 	    //  We'll set the bounds to be from x0, y100 and be 800px wide by 100px high
 	    level.setTextBounds(0, 0, 800, 100);
+
+
+	    var style3 = { font: "bold 32px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV: "bottom" };
+	    //  The Text is positioned at 0, 100
+	    restartText = game.add.text(0, 0, "Click to play again ...", style3);
+	    // text.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
+	    //  We'll set the bounds to be from x0, y100 and be 800px wide by 100px high
+	    restartText.setTextBounds(0, 0, 800, 640);
 
 	    
 	}
@@ -96,6 +117,10 @@ function main(){
 				board = [];
 				text.setText("LOST THE GAME");
 			    text.addColor(decimalColorToHTMLcolor(black), 0);
+	    		game.stage.backgroundColor = black;
+	    		music.stop();
+	    		loseFX.play();
+
 				gameState = "waiting";
 			}else{
 
@@ -118,10 +143,12 @@ function main(){
 	    }else if(gameState == "wrong"){
 	    	changeColorTo(correct,black);
 			changeColorTo(wrong,black);
+			wrongFX.play();
 			gameState = "none";
 	    }else if (gameState == "correct"){
 	    	changeColorTo(correct,white);
 			changeColorTo(wrong,white);
+			correctFX.play();
 			gameState = "none";
 	    }else if ( gameState == "waiting"){
 			game.input.onDown.addOnce(restart,this);
@@ -319,10 +346,12 @@ function main(){
 		
 		gameState = "none";
 		board = spawnBoard();
+	    game.stage.backgroundColor = white;
+
 
 		level.setText(""+randomNumber(1,700));
 
-	    // music.play();
+	    music.play();
 
 	    console.log("restart_done:"+gameState+" time:"+game.time.totalElapsedSeconds());
 
