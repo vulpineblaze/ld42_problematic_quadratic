@@ -27,7 +27,7 @@
 http://fusionbombsderp.com/ld42/
 
 ### Requirements
-* Phaser v2.6.2, linked through CDN..
+* Phaser v2.6.2, linked through CDN.
 
 ### Usage
 Load via browser and play per instructions!
