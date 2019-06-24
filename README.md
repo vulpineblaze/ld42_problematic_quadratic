@@ -1,16 +1,5 @@
-# ld42_problematic_quadratic
-ld42 entry
-
- * Note the word says one squares color and *is* the other sqaures color
- * Click the square that shares a color with the word, they both turn black
- * Click the square that the word says, they both disappear
- * Black out the screen to end the game; you are *running out of (white) space*
-
-**tl;dr: By clicking the color of the word that appears and not the word itself, you are running out of "white space"**
-
-
-# Project Name
-> Here goes your awesome project description!
+# Problematic Quadratic
+> Problematic Quadratic is an in browswer puzzle game based on colors and logic.
 
 ## Table of contents
 * [General info](#general-info)
@@ -25,48 +14,37 @@ ld42 entry
 * [Contact](#contact)
 
 ## General info
-Add more general information about project. What the purpose of the project is? Motivation?
-Put possible docs / coda link here.
+* Problematic Quadratic was created for the [Ludum Dare Game Competition (LD#42)](https://ldjam.com/about)
+* It is an in browser game where you click the block that is the same color as the word you see, to turn both squares black.  Clicking the block that is the color which the word says will make both blocks whitespace.  Win the game by making all blocks black.
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![screenshot](https://github.com/vulpineblaze/ld42_problematic_quadratic/blob/master/screenshotLD42.PNG)
 
 ## Technologies
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+* Phaser v2.6.2
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
+http://fusionbombsderp.com/ld42/
 
 ### Requirements
-If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+* Phaser v2.6.2, linked through CDN..
 
 ### Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Code Examples
-Show examples of usage:
-`put-your-code-here`
+Load via browser and play per instructions!
 
 ## Features
-List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+ * Note the word says one squares color and *is* the other sqaures color
+ * Click the square that shares a color with the word, they both turn black
+ * Click the square that is the color the word says, they both disappear
+ * Black out the screen to end the game; you are *running out of (white) space*
 
-To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+**tl;dr: By clicking the color of the word that appears and not the word itself, you are running out of "white space"**
 
 ## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+Project is: _finished_
 
 ## Inspiration
-Add here credits. Project inspired by..., based on...
+This game was inspired by the prompt.
 
 ## Contact
 Created by [@vulpineblaze](https://github.com/vulpineblaze) - feel free to contact me!
