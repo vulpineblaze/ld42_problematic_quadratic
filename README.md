@@ -44,7 +44,7 @@ Load via browser and play per instructions!
 Project is: _finished_
 
 ## Inspiration
-This game was inspired by the prompt.
+This game was inspired by the prompt, and my desire for a game to help build faster reaction times.
 
 ## Contact
 Created by [@vulpineblaze](https://github.com/vulpineblaze) - feel free to contact me!
